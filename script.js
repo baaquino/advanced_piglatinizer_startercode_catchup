@@ -11,20 +11,47 @@ $(document).ready(function() {
     // This function should return true if the input word starts with a vowel,
     // otherwise it should return false.
     function wordStartsWithVowel(word) {
-
+        var vowel = "e";
+        if (word.charAt(0) === vowel){
+            return true;
+            }
+        var vowel = "a";
+        if (word.charAt(0) === vowel){
+            return true;
+            }
+        var vowel = "i";
+        if (word.charAt(0) === vowel){
+            return true;
+            }
+        var vowel = "o";
+        if (word.charAt(0) === vowel){
+            return true;
+            }
+        var vowel = "u";
+        if (word.charAt(0) === vowel){
+            return true;
+            }
+        else{
+            return false;}
     }
-
+    var testWord2 = word;
+    var testResult2 = wordStartsWithVowel(testWord2);
+    
     // Appends "yay" to the end of the word and returns the word.
     function appendYayToWord(word) {
-
+        return word + "yay";
     }
 
     // Moves the first consonant to the end of the word, appends "ay" to the end of the word,
     // and returns the word.
     function convertWordWithConsonant(word) {
-
+        var con= word.charAt(0);
+        var sub= word.substring(1);
+        return sub + con + "ay";
     }
-
+    var testWord4 = word;
+    var testResult4 = convertWordWithConsonant(testWord4);
+    
     // If the word starts with a vowel, return the result of appendYayToWord.
     // Otherwise, return the result of convertWordWithConsonant.
     function convertWordToPigLatin(word) {
