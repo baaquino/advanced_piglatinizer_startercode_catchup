@@ -7,7 +7,13 @@
 // igpay, banana becomes ananabay, and aadvark becomes aadvarkway.
 
 $(document).ready(function() {
+    $("#translate").click(function() {
+        var typedWord = $("#word").val();
+        $("#output").append(typedWord)
+    });
+    /*
 
+    */
     // This function should return true if the input word starts with a vowel,
     // otherwise it should return false.
     function wordStartsWithVowel(word) {
@@ -30,12 +36,13 @@ $(document).ready(function() {
         var vowel = "u";
         if (word.charAt(0) === vowel){
             return true;
-            }
+        }
         else{
             return false;}
+        
     }
-    var testWord2 = word;
-    var testResult2 = wordStartsWithVowel(testWord2);
+    //var testWord2 = word;
+    //var testResult2 = wordStartsWithVowel(testWord2);
     
     // Appends "yay" to the end of the word and returns the word.
     function appendYayToWord(word) {
@@ -49,15 +56,21 @@ $(document).ready(function() {
         var sub= word.substring(1);
         return sub + con + "ay";
     }
-    var testWord4 = word;
-    var testResult4 = convertWordWithConsonant(testWord4);
+    //var testWord4 = word;
+    //var testResult4 = convertWordWithConsonant(testWord4);
     
     // If the word starts with a vowel, return the result of appendYayToWord.
     // Otherwise, return the result of convertWordWithConsonant.
     function convertWordToPigLatin(word) {
-
+        if((wordStartsWithVowel(word))){
+            return appendYayToWord
+        }
+        else {
+            convertWordWithConsonant(word);
+        }
+        
     }
-
+console.log(convertWordToPigLatin("hi"));
     // Create a click handler that takes is triggered when the user clicks the translate button.
         // Gets a word from the input box
         // Transforms the word to pig latin
